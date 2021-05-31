@@ -13,7 +13,7 @@ public class Bai6 {
 //        inMang();
 //        soChanCuoiCung();
 //        arrSoAm();
-        //       inHinhTamGiac();
+        inHinhTamGiac();
         bai10();
 
     }
@@ -65,22 +65,29 @@ public class Bai6 {
             n = scanner.nextInt();
         }
         for (int i = 1; i <= n; i++) {
-            print(i, n);
+            for (int j = 1; j < n - i; j++) {
+                System.out.print("  ");
+            }
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                System.out.print("* ");
+            }
+            System.out.println("");
         }
     }
 
-    static void print(int n, int height) {
-        int space = height - n;
-        printChar(space, " ");
-        printChar(n, "* ");
-        System.out.println("\n");
-    }
-
-    static void printChar(int n, String ch) {
-        for (int i = 0; i < n; i++) {
-            System.out.print(ch);
-        }
-    }
+//    static void print(int n, int height) {
+//        int space = height - n;
+//        printChar(space, " ");
+//        printChar(n, "* ");
+//        System.out.println("\n");
+//    }
+//
+//    static void printChar(int n, String ch) {
+//        for (int i = 1; i < 2*i-1; i++) {
+//
+//            System.out.print(ch);
+//        }
+//    }
 
     static void bai10() {
         System.out.println("ggdfg");
