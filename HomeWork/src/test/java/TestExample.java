@@ -1,5 +1,8 @@
+import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.Test;
+import static org.assertj.core.api.Assertions.withPrecision;
+//import org.junit.jupiter.api.*;
 
 public class TestExample {
     Example vd =new Example();
@@ -51,5 +54,35 @@ public class TestExample {
         Assert.assertSame(strObject,clonestrObject);
         Assert.assertNotSame(clonestrObject,otherObject);
 
+    }
+    @Test
+    public void exsampleAssertion(){
+        int [] a={1,3,4,5,6};
+        Assertions.assertThat(a).contains(3).isNotNull()
+                .hasSize(5)
+                .startsWith(1)
+                .endsWith(6)
+                .containsSequence(4,5,6);
+    }
+    @Test
+    public void ktSDT(){
+        String sdt="0392794783";
+        Assertions.assertThat(sdt).isNotNull()
+                .startsWith(0)
+                .hasSize(10)
+                .
+
+
+    }
+    @Test
+    public void KtEmail()
+    {
+        String so = "745945@com.vn";
+        Assertions.assertThat(so).containsOnlyOnce("@")
+                .doesNotContain("..")
+                .doesNotStartWith("@")
+                .doesNotEndWith("@")
+                .doesNotContain("#$%")
+                .containsPattern("^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$");
     }
 }
